@@ -18,7 +18,7 @@ O repositório é organizado da seguinte maneira:
 2. [**02 - ROS2 Basics**](tutorials/02-ros2-basics/README.md) - Estrutura e comandos básicos do ROS2.
 3. [**03 - Simulation**](tutorials/03-simulation/README.md) - Simulação do TurtleBot3 no Gazebo e Fake Node.
 4. [**04 - Teleoperation**](tutorials/04-teleoperation/README.md) - Controlando o TurtleBot3 via teleoperação.
-
+5. [**05 - SLAM & Navigation**](tutorials/05-SLAM-Navigation/README.md) - Mapeando e Navegando com o TurtleBot3
 ---
 
 ## 🏗️ Como o Repositório Funciona
