@@ -49,7 +49,7 @@ ros2 run turtlebot3_teleop teleop_keyboard
 ### **Passo 4: Salvando o mapa**
 Para salvar o mapa basta rodar o comando abaixo passando o caminho onde quer que o mapa seja salvo
 ```bash
-ros2 run nav2_map_server map_saver_cli -f ~/map
+ros2 run nav2_map_server map_saver_cli -f /root/shared_folder/{nome_do_mapa}
 ```
 
 Após esses passos, pode fechar o **RViz**
