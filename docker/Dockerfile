@@ -2,7 +2,7 @@ FROM osrf/ros:humble-desktop-full
 
 RUN apt update && apt install -y \
     nano \
-    git \
+    git \  
     ros-humble-gazebo-ros-pkgs \
     ros-humble-cartographer \
     ros-humble-cartographer-ros \
@@ -26,7 +26,13 @@ RUN apt update && apt install -y \
     ros-humble-tf-transformations \
     ros-humble-hardware-interface \
     ros-humble-control-msgs \
+    python3-pip \
     && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install \
+    # tensorflow \
+    keras==2.1.5 
+    # -U rosinstall msgpack empy defusedxml netifaces
 
 RUN mkdir -p /root/turtlebot3_ws/src && cd /root/turtlebot3_ws/src && \
     git clone -b humble-devel https://github.com/pmec-atwork/turtlebot3.git && \
