@@ -20,7 +20,9 @@ RUN apt update && apt install -y \
     ros-humble-moveit-ros-warehouse \
     ros-humble-warehouse-ros* \
     ros-humble-srdfdom \
-    ros-humble-ros2-control \
+    ros-humble-moveit* \
+    ros-humble-ros2-control* \
+    ros-humble-gazebo-ros2-control* \
     ros-humble-ros2-controllers \
     ros-humble-gripper-controllers \
     ros-humble-tf-transformations \
@@ -32,6 +34,7 @@ RUN mkdir -p /root/turtlebot3_ws/src && cd /root/turtlebot3_ws/src && \
     git clone -b humble-devel https://github.com/pmec-atwork/turtlebot3.git && \
     git clone -b humble-devel https://github.com/pmec-atwork/turtlebot3_simulations && \
     git clone -b humble-devel https://github.com/pmec-atwork/turtlebot3_msgs.git && \
+    git clone -b humble-devel https://github.com/pmec-atwork/turtlebot3_manipulation_test.git && \
     cd .. && \
     /bin/bash -c "source /opt/ros/humble/setup.bash && colcon build --symlink-install"
 
