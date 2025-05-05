@@ -19,6 +19,7 @@ O repositório é organizado da seguinte maneira:
 3. [**03 - Simulation**](tutorials/03-simulation/README.md) - Simulação do TurtleBot3 no Gazebo e Fake Node.
 4. [**04 - Teleoperation**](tutorials/04-teleoperation/README.md) - Controlando o TurtleBot3 via teleoperação.
 5. [**05 - SLAM & Navigation**](tutorials/05-SLAM-Navigation/README.md) - Mapeando e Navegando com o TurtleBot3
+6. [**06 - Machine Learning**](tutorials/06-Machine-Learning/README.md) - Aprendizado por reforço com o TurtleBot3  
 ---
 
 ## 🏗️ Como o Repositório Funciona
