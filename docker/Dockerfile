@@ -29,15 +29,18 @@ RUN apt update && apt install -y \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install \
-    # tensorflow \
-    keras==2.1.5 
-    # -U rosinstall msgpack empy defusedxml netifaces
+RUN pip install --upgrade\
+    numpy==1.26.4 \
+    scipy==1.10.1 \
+    tensorflow==2.19.0 \
+    keras==3.9.2 \
+    pyqtgraph
 
 RUN mkdir -p /root/turtlebot3_ws/src && cd /root/turtlebot3_ws/src && \
     git clone -b humble-devel https://github.com/pmec-atwork/turtlebot3.git && \
     git clone -b humble-devel https://github.com/pmec-atwork/turtlebot3_simulations && \
-    git clone -b humble-devel https://github.com/pmec-atwork/turtlebot3_msgs.git && \
+    git clone https://github.com/pmec-atwork/turtlebot3_msgs.git && \
+    git clone https://github.com/pmec-atwork/turtlebot3_machine_learning.git && \
     cd .. && \
     /bin/bash -c "source /opt/ros/humble/setup.bash && colcon build --symlink-install"
 
