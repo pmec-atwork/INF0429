@@ -51,7 +51,7 @@ Neste caso, o state_size é 26, composto por:
 Por padrão, o LDS do TurtleBot3 tem 360 amostras.
 Você pode modificar essa amostragem desta forma no terminal:
 ```bash
-nano /turtlebot3_simulations/turtlebot3_gazebo/models/turtlebot3_waffle/model.sdf
+nano /root/turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/turtlebot3_waffle/model.sdf
 ```
 
 Procure por: 
