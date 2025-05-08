@@ -38,9 +38,10 @@ RUN pip install --upgrade\
 
 RUN mkdir -p /root/turtlebot3_ws/src && cd /root/turtlebot3_ws/src && \
     git clone -b humble-devel https://github.com/pmec-atwork/turtlebot3.git && \
-    git clone -b humble-devel https://github.com/pmec-atwork/turtlebot3_simulations && \
+    git clone https://github.com/pmec-atwork/turtlebot3_simulations && \
     git clone https://github.com/pmec-atwork/turtlebot3_msgs.git && \
     git clone https://github.com/pmec-atwork/turtlebot3_machine_learning.git && \
+    git clone https://github.com/ROBOTIS-GIT/turtlebot3_autorace.git && \
     cd .. && \
     /bin/bash -c "source /opt/ros/humble/setup.bash && colcon build --symlink-install"
 
