@@ -23,21 +23,15 @@ export TURTLEBOT3_MODEL=burger_cam
 ```
 ---
 
-## 🔧2️⃣  Configurando o Plugin de Mundo
-Adicione a seguinte linha ao seu ~/.bashrc. Este plugin permite animar ambientes dinâmicos no seu mundo simulado:
-```bash
-echo 'export GAZEBO_PLUGIN_PATH=$HOME/tutlebot3_ws/build/turtlebot3_gazebo:$GAZEBO_PLUGIN_PATH' >> ~/.bashrc
-```
-
-## 🤖3️⃣ Definindo o Modelo do TurtleBot3
+## 🤖2️⃣ Definindo o Modelo do TurtleBot3
 
 Adicione também esta linha ao seu ~/.bashrc, pois o Autorace só é compatível com o modelo burger_cam:
 ```bash
-echo 'export TURTLEBOT3_MODEL=burger_cam' >> ~/.bashrc
+export TURTLEBOT3_MODEL=burger_cam
 ```
 
 
-## 🌍 2️⃣ Simulação do Ambiente de Direção
+## 🌍3️⃣ Simulação do Ambiente de Direção
 #### Inicie a simulação no Gazebo com um curso pré-definido de acompanhamento de faixa.
 ```bash
 ros2 launch turtlebot3_gazebo turtlebot3_autorace_2020.launch.py
