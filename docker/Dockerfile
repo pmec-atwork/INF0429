@@ -38,12 +38,17 @@ RUN pip install --upgrade\
 
 RUN mkdir -p /root/turtlebot3_ws/src && cd /root/turtlebot3_ws/src && \
     git clone -b humble-devel https://github.com/pmec-atwork/turtlebot3.git && \
-    git clone -b humble https://github.com/pmec-atwork/turtlebot3_simulations && \
+    git clone -b humble https://github.com/pmec-atwork/turtlebot3_simulations.git && \
     git clone https://github.com/pmec-atwork/turtlebot3_msgs.git && \
     git clone https://github.com/pmec-atwork/turtlebot3_machine_learning.git && \
     git clone https://github.com/ROBOTIS-GIT/turtlebot3_autorace.git && \
     cd .. && \
     /bin/bash -c "source /opt/ros/humble/setup.bash && colcon build --symlink-install"
+
+RUN mkdir -p /root/models_ws/src && cd /root/models_ws/src && \
+    git clone https://github.com/CentralLabFacilities/gazebo_ycb.git && \
+    mv /root/models_ws/src/gazebo_ycb/models/* /root/turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/ && \ 
+    rm -rf /root/turtlebot3_ws/src/gazebo_ycb
 
 ENV TURTLEBOT3_MODEL=waffle
 
