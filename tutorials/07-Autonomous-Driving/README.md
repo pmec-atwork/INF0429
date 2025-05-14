@@ -122,3 +122,61 @@ Para a visualização da detecção use o rqt e observe a câmera enquanto contr
 exemplo: 
 ![alt text](images/detection_sign.png)
 
+### 4️⃣🚦 Detecção de Semáforos
+
+#### Processo de Detecção de Semáforos
+1. Filtragem da Imagem:
+
+- A imagem capturada pela câmera é filtrada para extrair máscaras de cores específicas: vermelho, amarelo e verde.
+
+2. Localização do Círculo na Região de Interesse (RoI):
+
+- Para cada máscara de cor, o algoritmo localiza círculos na região de interesse (RoI), onde os semáforos são esperados.
+
+3. Identificação das Luzes do Semáforo:
+
+- O sistema identifica as luzes do semáforo na seguinte ordem: vermelho, amarelo e verde.
+
+#### Configuração e Execução da Detecção de Semáforos
+1. Inicie a simulação do Autorace no Gazebo: Abra um terminal e execute o seguinte comando:
+```bash
+ros2 launch turtlebot3_gazebo turtlebot3_autorace_2020.launch.py
+```
+
+2. Execute o nó de calibração intrínseca: Abra um novo terminal e execute:
+```bash
+ros2 launch turtlebot3_autorace_camera intrinsic_camera_calibration.launch.py
+```
+
+3. Execute o nó de calibração extrínseca: Abra outro terminal e execute:
+```bash
+ros2 launch turtlebot3_autorace_camera extrinsic_camera_calibration.launch.py
+```
+
+4. Inicie o nó de detecção de semáforos com a opção de calibração: Abra um novo terminal e execute:
+```bash
+ros2 launch turtlebot3_autorace_detect detect_traffic_light.launch.py 
+```
+
+5. Visualize os resultados no rqt: Abra o rqt em um terminal:
+```bash
+rqt
+```
+
+#### No menu do rqt, vá para:
+
+Plugins > Visualization > Image View.  
+Crie duas janelas de visualização de imagem.
+
+1. Na primeira janela, selecione o tópico:  
+    - `/detect/image_traffic_light/compressed`  
+      Para visualizar a imagem processada com os semáforos detectados.
+
+2. Na segunda janela, selecione um dos seguintes tópicos para visualizar as máscaras de cores:  
+    - `/detect/image_red_light`  
+    - `/detect/image_yellow_light`  
+    - `/detect/image_green_light`  
+    - `/detect/image_traffic_light`
+
+Exemplo para luz verde:
+![alt text](images/traffic_light.png)
