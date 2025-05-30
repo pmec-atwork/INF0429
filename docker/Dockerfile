@@ -32,8 +32,8 @@ RUN apt update && apt install -y \
 RUN pip install --upgrade\
     numpy==1.26.4 \
     scipy==1.10.1 \
-    # tensorflow==2.19.0 \
-    # keras==3.9.2 \
+    tensorflow==2.19.0 \
+    keras==3.9.2 \
     pyqtgraph
 
 RUN mkdir -p /root/turtlebot3_ws/src && cd /root/turtlebot3_ws/src && \
